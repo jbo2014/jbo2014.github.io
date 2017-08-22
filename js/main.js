@@ -213,21 +213,32 @@ jQuery(function($) {'use strict';
 	});
 
 	//Google Map
-	var latitude = $('#google-map').data('latitude');
-	var longitude = $('#google-map').data('longitude');
-	function initialize_map() {
-		var myLatlng = new google.maps.LatLng(latitude,longitude);
-		var mapOptions = {
-			zoom: 14,
-			scrollwheel: false,
-			center: myLatlng
-		};
-		var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
-		var marker = new google.maps.Marker({
-			position: myLatlng,
-			map: map
-		});
-	}
-	google.maps.event.addDomListener(window, 'load', initialize_map);
+	// var latitude = $('#google-map').data('latitude');
+	// var longitude = $('#google-map').data('longitude');
+	// function initialize_map() {
+	// 	var myLatlng = new google.maps.LatLng(latitude,longitude);
+	// 	var mapOptions = {
+	// 		zoom: 14,
+	// 		scrollwheel: false,
+	// 		center: myLatlng
+	// 	};
+	// 	var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+	// 	var marker = new google.maps.Marker({
+	// 		position: myLatlng,
+	// 		map: map
+	// 	});
+	// }
+	// google.maps.event.addDomListener(window, 'load', initialize_map);
+
+
+
+
+
+
+	// self
+	$('#cta > .more-btn').on('click', function() {  
+		$('html, body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+		return false;
+	});
 
 });
