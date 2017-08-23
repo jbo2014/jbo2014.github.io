@@ -156,7 +156,7 @@ ul.nostyle i {
 /*************************
 *******Header******
 **************************/
-/*.navbar.navbar-default {
+.navbar.navbar-default {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
@@ -222,7 +222,7 @@ ul.nostyle i {
     background-color: transparent;
   }
 }
-#main-slider {
+/*#main-slider {
   overflow: hidden;
 }
 #main-slider .item {
