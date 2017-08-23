@@ -156,7 +156,7 @@ ul.nostyle i {
 /*************************
 *******Header******
 **************************/
-.navbar.navbar-default {
+/*.navbar.navbar-default {
   border: 0;
   border-radius: 0;
   margin-bottom: 0;
@@ -281,7 +281,7 @@ ul.nostyle i {
 #main-slider .owl-next {
   right: -35px;
   text-indent: -14px;
-}
+}*/
 #bar {
   width: 0%;
   max-width: 100%;
@@ -946,7 +946,7 @@ ul.nostyle i {
 
     
 /********** self **********/
-.header {
+.topor {
   background: url('../images/home-bg.jpg');
   background-size: cover;
   background-attachment: fixed;
