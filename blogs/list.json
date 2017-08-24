@@ -6,7 +6,8 @@
 		"3":"行业",
 		"4":"编码",
 		"5":"设计",
-		"6":"未分类"
+		"6":"杂谈",
+		"7":"未分类"
 	},
 
 	"blogs":[
@@ -16,8 +17,10 @@
 			"title":"张国立",
 			"author":"男",
 			"time":"2017 08 23",
+			"imgsrc":"",
+			"intro":"first",
 			"review":3,
-			"href":"./1234567890.json"
+			"href":"./post.html?id=1234567890"
 		},
 		{
 			"id":1234567891,
@@ -25,17 +28,21 @@
 			"title":"张国立2",
 			"author":"男",
 			"time":"2017 08 23",
+			"imgsrc":"",
+			"intro":"second",
 			"review":3,
-			"href":"./1234567891.json"
+			"href":"./post.html?id=1234567891"
 		},
 		{
 			"id":1234567892,
 			"class":3,
-			"title":"张国立",
+			"title":"张国立3",
 			"author":"男",
 			"time":"2017 08 23",
+			"imgsrc":"",
+			"intro":"third",
 			"review":3,
-			"href":"./1234567892.json"
+			"href":"./post.html?id=1234567892"
 		}
 	]
 }

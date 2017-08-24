@@ -125,44 +125,25 @@
 		<div class="container">
 		<section id="blogs">
 			<div class="row container">
-				<div class="col-md-8">
-					<article class="blog-post">
-						<div class="blog-post-image">
-							<a href="post.html"><img src="images/blog/750x500-1.jpg" alt=""></a>
-						</div>
-						<div class="blog-post-body">
-							<h2><a href="post.html">Vintage-Inspired Finds for Your Home</a></h2>
-							<div class="post-meta"><span>by <a href="#">Jamie Mooze</a></span>/<span><i class="fa fa-clock-o"></i>March 14, 2015</span>/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span></div>
-							<p>ew months ago, we found ridiculously cheap plane tickets for Boston and off we went. It was our first visit to the city and, believe it or not, Stockholm in February was more pleasant than Boston in March. It probably has a lot to do with the fact that we arrived completely unprepared. That I, in my converse and thin jacket, did not end up with pneumonia is honestly not even fair.</p>
-							<div class="read-more"><a href="#">Continue Reading</a></div>
-						</div>
-					</article>
+				<!-- 左侧列表 Start -->
+				<div class="col-md-8" id="list">
 					<!-- article -->
-					<article class="blog-post">
+					<article class="blog-post" style="display:none;">
 						<div class="blog-post-image">
-							<a href="post.html"><img src="images/blog/750x500-2.jpg" alt=""></a>
+							<a href="post.html"><img src="" alt=""></a>
 						</div>
 						<div class="blog-post-body">
-							<h2><a href="post.html">The Best Street Style Looks of London Fashion Week</a></h2>
-							<div class="post-meta"><span>by <a href="#">Jamie Mooze</a></span>/<span><i class="fa fa-clock-o"></i>March 14, 2015</span>/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span></div>
-							<p>Few months ago, we found ridiculously cheap plane tickets for Boston and off we went. It was our first visit to the city and, believe it or not, Stockholm in February was more pleasant than Boston in March. It probably has a lot to do with the fact that we arrived completely unprepared.</p>
-							<div class="read-more"><a href="#">Continue Reading</a></div>
-						</div>
-					</article>
-					<!-- article -->
-					<article class="blog-post">
-						<div class="blog-post-image">
-							<a href="post.html"><img src="images/blog/750x500-3.jpg" alt=""></a>
-						</div>
-						<div class="blog-post-body">
-							<h2><a href="post.html">Front Row Style: Our Favorite A-List Moments of Fashion Week</a></h2>
-							<div class="post-meta"><span>by <a href="#">Jamie Mooze</a></span>/<span><i class="fa fa-clock-o"></i>March 14, 2015</span>/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span></div>
-							<p>It was our first visit to the city and, believe it or not, Stockholm in February was more pleasant than Boston in March. It probably has a lot to do with the fact that we arrived completely unprepared. Few months ago, we found ridiculously cheap plane tickets for Boston and off we went.</p>
+							<h2><a href="post.html"></a></h2>
+							<div class="post-meta"><span>by <a href="#"></a></span>/<span><i class="fa fa-clock-o"></i></span><!-- /<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span> --></div>
+							<p></p>
 							<div class="read-more"><a href="#">Continue Reading</a></div>
 						</div>
 					</article>
 				</div>
-                <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>
+				<!-- 左侧列表 End -->
+
+
+				 <!-- 右侧边栏 Start -->
 				<div class="col-md-4 sidebar-gutter">
 					<aside>
 					<!-- sidebar-widget -->
@@ -255,18 +236,19 @@
 						<h3 class="sidebar-title">博客分类</h3>
 						<div class="widget-container">
 							<ul>
-								<li><a href="">工作室</a></li>
+								<!-- <li><a href="">工作室</a></li>
 								<li><a href="#">项目</a></li>
 								<li><a href="#">行业</a></li>
 								<li><a href="#">编码</a></li>
 								<li><a href="#">设计</a></li>
 								<li><a href="#">杂谈</a></li>
-								<li><a href="#">未分类</a></li>
+								<li><a href="#">未分类</a></li> -->
 							</ul>
 						</div>
 					</div>
 					</aside>
 				</div>
+				<!-- 右侧边栏 End -->
 			</div>
 		</section>
 		</div> <!-- /.container -->
@@ -310,8 +292,6 @@
 		</script>
 
 		<script>	
-		var arts = null;
-
 		$(document).ready(function() {
 
 			/********** Slider Start **********/
@@ -399,20 +379,33 @@
 
 		    /********** List Start **********/
 		   	var cat = GetQueryString("class");
-				console.log("10");
-		   	$.getJSON("https://jbo2014.github.io/blogs/list.json", function(json){
-		   		arts = json;
-				console.log("200");
-		   			console.log(json);
-		   		// $.each(json.class,function(i,n){
-		   		// 	// $("#category")
-		   		// 	// .find("ul");
-		   		// 	//.append("<li><a href='/blogs?class='"++">"++"</a></li>");
-		   		// });		   		
+		   	var tmp = $("#list").children().first();
+		   	tmp.hide();
+		   	$.getJSON("./blogs/list.json?_="+(new Date().getTime()), function(json){
+		   		//右侧博客分类
+		   		$.each(json.class,function(i,n){
+		   			$("#category")
+		   			.find("ul")
+		   			.append("<li><a href='./blogs.html?class="+i+"'>"+n+"</a></li>");
+		   		});	
+		   		//中间博客列表
+		   		$.each(json.blogs,function(i,n){
+		   			var art = $(tmp).clone().appendTo("#list").show();
+		   			//设置图片
+		   			$(art).children(".blog-post-image").find("img").attr("src", n.imgsrc);
+		   			//设置URL
+		   			$(art).children(".blog-post-body").find("a").attr("href", n.href);
+		   			//设置标题
+		   			$(art).children(".blog-post-body").find("h2 > a").html(n.title);
+		   			//设置作者
+		   			$(art).find(".blog-post-body > .post-meta").find("a:first").html(n.author);
+		   			//设置发布时间
+		   			$(art).find(".blog-post-body > .post-meta").find("i:first").after(n.time);
+		   			//设置简介内容
+		   			$(art).children(".blog-post-body").find("p").html(n.intro);
+		   		});	   		
 			});
-			function abc(data){
-				alart(data);
-			}
+
 			// $.ajax({  
    //      		//请求方式为get  
 		 //        type:"POST",  
