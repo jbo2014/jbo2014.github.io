@@ -393,7 +393,7 @@
 
 		    /********** List Start **********/
 		   	var cat = GetQueryString("class");
-		   	$.getJSON("./blogs/list.json?_="+new Date().getTime()+"&callback=?", function(json){
+		   	$.getJSON("./blogs/list.json", function(json){
 		   			console.log(json);
 		   		// $.each(json.class,function(i,n){
 		   		// 	// $("#category")
@@ -401,6 +401,9 @@
 		   		// 	//.append("<li><a href='/blogs?class='"++">"++"</a></li>");
 		   		// });		   		
 			});
+			function abc(data){
+				alart(data);
+			}
 			// $.ajax({  
    //      		//请求方式为get  
 		 //        type:"POST",  
