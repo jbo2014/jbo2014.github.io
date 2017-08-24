@@ -911,7 +911,7 @@
 
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <a href="./blogs.html" class="btn btn-default smoothScroll more-btn">进入博客</a>
+                    <a href="#" id="gotoblog" class="btn btn-default smoothScroll more-btn">进入博客</a>
                 </div>
             </div>
         </div>
@@ -998,5 +998,12 @@
     <script src="js/jquery.inview.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        
+
+        $(document).ready(function() {
+            $("#gotoblog").attr("href", "./blogs.html?_="+(new Date().getTime()));
+        });
+    </script>
 </body>
 </html>
