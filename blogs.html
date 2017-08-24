@@ -130,10 +130,10 @@
 					<!-- article -->
 					<article class="blog-post" style="display:none;">
 						<div class="blog-post-image">
-							<a href="post.html"><img src="" alt=""></a>
+							<a href=""><img src="" alt=""></a>
 						</div>
 						<div class="blog-post-body">
-							<h2><a href="post.html"></a></h2>
+							<h2><a href=""></a></h2>
 							<div class="post-meta"><span>by <a href="#"></a></span>/<span><i class="fa fa-clock-o"></i></span><!-- /<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span> --></div>
 							<p></p>
 							<div class="read-more"><a href="#">Continue Reading</a></div>
@@ -159,59 +159,15 @@
 					<!-- sidebar-widget -->
 					<div class="sidebar-widget">
 						<h3 class="sidebar-title">精选发布</h3>
-						<div class="widget-container">
+						<div class="widget-container" id="choice">
 							<article class="widget-post">
 								<div class="post-image">
-									<a href="post.html"><img src="images/blog/90x60-1.jpg" alt=""></a>
+									<a href=""><img src="" alt=""></a>
 								</div>
 								<div class="post-body">
-									<h2><a href="post.html">The State of the Word 2014</a></h2>
+									<h2><a href=""></a></h2>
 									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-									</div>
-								</div>
-							</article>
-							<article class="widget-post">
-								<div class="post-image">
-									<a href="post.html"><img src="images/blog/90x60-2.jpg" alt=""></a>
-								</div>
-								<div class="post-body">
-									<h2><a href="post.html">Why The Muppets Needs to Channel 30 Rock</a></h2>
-									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-									</div>
-								</div>
-							</article>
-							<article class="widget-post">
-								<div class="post-image">
-									<a href="post.html"><img src="images/blog/90x60-3.jpg" alt=""></a>
-								</div>
-								<div class="post-body">
-									<h2><a href="post.html">The State of the Word 2014</a></h2>
-									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-									</div>
-								</div>
-							</article>
-							<article class="widget-post">
-								<div class="post-image">
-									<a href="post.html"><img src="images/blog/90x60-4.jpg" alt=""></a>
-								</div>
-								<div class="post-body">
-									<h2><a href="post.html">Vintage-Inspired Finds for Your Home</a></h2>
-									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-									</div>
-								</div>
-							</article>
-							<article class="widget-post">
-								<div class="post-image">
-									<a href="post.html"><img src="images/blog/90x60-5.jpg" alt=""></a>
-								</div>
-								<div class="post-body">
-									<h2><a href="post.html">The State of the Word 2014</a></h2>
-									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
+										<span>by <a href="#"></a></span> /   <span><i class="fa fa-clock-o"></i> </span> <!-- <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span> -->
 									</div>
 								</div>
 							</article>
@@ -379,8 +335,13 @@
 
 		    /********** List Start **********/
 		   	var cat = GetQueryString("class");
+		   	//博客列表中item模板
 		   	var tmp = $("#list").children().first();
 		   	tmp.hide();
+		   	//精选发布中item模板
+		   	var tmp2 = $("#choice").children().first();
+		   	tmp2.hide();
+		   	var art = null;
 		   	$.getJSON("./blogs/list.json?_="+(new Date().getTime()), function(json){
 		   		//右侧博客分类
 		   		$.each(json.class,function(i,n){
@@ -388,9 +349,10 @@
 		   			.find("ul")
 		   			.append("<li><a href='./blogs.html?class="+i+"'>"+n+"</a></li>");
 		   		});	
-		   		//中间博客列表
+		   		//中间博客列表 与 右侧精选发布
 		   		$.each(json.blogs,function(i,n){
-		   			var art = $(tmp).clone().appendTo("#list").show();
+		   			//博客列表
+		   			art = $(tmp).clone().appendTo("#list").show();
 		   			//设置图片
 		   			$(art).children(".blog-post-image").find("img").attr("src", n.imgsrc);
 		   			//设置URL
@@ -403,6 +365,23 @@
 		   			$(art).find(".blog-post-body > .post-meta").find("i:first").after(n.time);
 		   			//设置简介内容
 		   			$(art).children(".blog-post-body").find("p").html(n.intro);
+
+		   			//精选发布
+		   			if(n.featured=="1"){
+		   				art = $(tmp2).clone().appendTo("#choice").show();
+			   			//设置图片
+			   			$(art).children(".post-image").find("img").attr("src", n.imgsrc);
+			   			//设置URL
+			   			$(art).children(".post-body").find("a").attr("href", n.href);
+			   			//设置标题
+			   			$(art).children(".post-body").find("h2 > a").html(n.title);
+			   			//设置作者
+			   			$(art).find(".post-body > .post-meta").find("a:first").html(n.author);
+			   			//设置发布时间
+			   			$(art).find(".post-body > .post-meta").find("i:first").after(n.time);
+			   			//设置简介内容
+			   			$(art).children(".post-body").find("p").html(n.intro);
+		   			}
 		   		});	   		
 			});
 
