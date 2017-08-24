@@ -7,61 +7,54 @@
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="favicon.ico">
+	    <link rel="icon" href="images/ico/fav.ico" mce_href="images/ico/fav.ico" type="image/x-icon">  
+	    <link rel="shortcut icon" href="images/ico/fav.ico" mce_href="images/ico/fav.ico" type="image/x-icon">
 		<title>Renda - clean blog theme based on Bootstrap</title>
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<!-- Custom styles for this template -->
-		<link href="css/jquery.bxslider.css" rel="stylesheet">
+		<!-- <link href="css/jquery.bxslider.css" rel="stylesheet"> -->
 		<link href="css/style.css" rel="stylesheet">
 	</head>
 	<body>
-		<!-- Navigation -->
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
-				</div>
-				<div id="navbar" class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="#about">Lifestyle</a></li>
-						<li><a href="#contact">Travel</a></li>
-						<li><a href="#contact">Fashion</a></li>
-						<li><a href="about.html">About Me</a></li>
-						<li><a href="about.html">Contact</a></li>
-					</ul>
+	    <header id="header">
+	        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
+	            <div class="container">
+	                <div class="navbar-header">
+	                    <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                        <span class="sr-only">Toggle navigation</span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                    </button> -->
+	                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+	                </div>
+					
+	                <div class="collapse navbar-collapse navbar-right">
+	                    <ul class="nav navbar-nav">	                        
+	                        <li class="scroll active"><a href="./index.html#home">首页</a></li>
+	                        <!-- <li class="scroll"><a href="#features">Features</a></li> -->
+	                        <li class="scroll"><a href="./index.html#services">服务</a></li>
+	                        <li class="scroll"><a href="./index.html#portfolio">案例</a></li>
+	                        <li class="scroll"><a href="./index.html#about">关于</a></li>
+	                        <li class="scroll"><a href="./index.html#meet-team">团队</a></li>
+	                        <!-- <li class="scroll"><a href="#pricing">Pricing</a></li> -->
+	                        <li class="scroll"><a href="./index.html#blog">博客</a></li> 
+	                        <li class="scroll"><a href="./index.html#get-in-touch">联系方式</a></li>                       
+	                    </ul>
+	                </div>
+	            </div><!--/.container-->
+	        </nav><!--/nav-->
+	    </header><!--/header-->
 
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-						<li><a href="#"><i class="fa fa-reddit"></i></a></li>
-					</ul>
-
-				</div>
-				<!--/.nav-collapse -->
-			</div>
-		</nav>
-
-		<div class="container">
-		<header>
-			<a href="index.html"><img src="images/logo.png"></a>
-		</header>
+		<div class="container">	
 		<section>
 			<div class="row">
 				<div class="col-md-8">
 					<article class="blog-post">
 						<div class="blog-post-image">
-							<a href="post.html"><img src="images/750x500-5.jpg" alt=""></a>
+							<a href="post.html"><img src="./blogs/mimg/750x500-3.jpg" alt=""></a>
 						</div>
 						<div class="blog-post-body">
 							<h2><a href="post.html">Vintage-Inspired Finds for Your Home</a></h2>
@@ -80,81 +73,39 @@
 						</div>
 					</article>
 				</div>
+
+				<!-- 右侧边栏 Start -->
 				<div class="col-md-4 sidebar-gutter">
 					<aside>
 					<!-- sidebar-widget -->
 					<div class="sidebar-widget">
-						<h3 class="sidebar-title">About Me</h3>
+						<h3 class="sidebar-title">我</h3>
 						<div class="widget-container widget-about">
-							<a href="post.html"><img src="images/author.jpg" alt=""></a>
-							<h4>Jamie Mooz</h4>
-							<div class="author-title">Designer</div>
-							<p>While everyone’s eyes are glued to the runway, it’s hard to ignore that there are major fashion moments on the front row too.</p>
+							<a href="post.html"><img src="images/blog/author.jpg" alt=""></a>
+							<h4>老王</h4>
+							<!-- <div class="author-title">Designer</div> -->
+							<p>嘿，我是老王，一个码工，编龄6、7年，项目十来个。虽已步入不惑之年，然环顾四周，家徒四壁。为补家用，特成立此室，以盈客八方，结友朋五湖。</p>
 						</div>
 					</div>
 					<!-- sidebar-widget -->
 					<div class="sidebar-widget">
-						<h3 class="sidebar-title">Featured Posts</h3>
-						<div class="widget-container">
+						<h3 class="sidebar-title">精选发布</h3>
+						<div class="widget-container" id="choice">
 							<article class="widget-post">
 								<div class="post-image">
-									<a href="post.html"><img src="images/90x60-1.jpg" alt=""></a>
+									<a href=""><img src="" alt=""></a>
 								</div>
 								<div class="post-body">
-									<h2><a href="post.html">The State of the Word 2014</a></h2>
+									<h2><a href=""></a></h2>
 									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-									</div>
-								</div>
-							</article>
-							<article class="widget-post">
-								<div class="post-image">
-									<a href="post.html"><img src="images/90x60-2.jpg" alt=""></a>
-								</div>
-								<div class="post-body">
-									<h2><a href="post.html">Why The Muppets Needs to Channel 30 Rock</a></h2>
-									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-									</div>
-								</div>
-							</article>
-							<article class="widget-post">
-								<div class="post-image">
-									<a href="post.html"><img src="images/90x60-3.jpg" alt=""></a>
-								</div>
-								<div class="post-body">
-									<h2><a href="post.html">The State of the Word 2014</a></h2>
-									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-									</div>
-								</div>
-							</article>
-							<article class="widget-post">
-								<div class="post-image">
-									<a href="post.html"><img src="images/90x60-4.jpg" alt=""></a>
-								</div>
-								<div class="post-body">
-									<h2><a href="post.html">Vintage-Inspired Finds for Your Home</a></h2>
-									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
-									</div>
-								</div>
-							</article>
-							<article class="widget-post">
-								<div class="post-image">
-									<a href="post.html"><img src="images/90x60-5.jpg" alt=""></a>
-								</div>
-								<div class="post-body">
-									<h2><a href="post.html">The State of the Word 2014</a></h2>
-									<div class="post-meta">
-										<span><i class="fa fa-clock-o"></i> 2. august 2015</span> <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span>
+										<span>by <a href="#"></a></span> /   <span><i class="fa fa-clock-o"></i> </span> <!-- <span><a href="post.html"><i class="fa fa-comment-o"></i> 23</a></span> -->
 									</div>
 								</div>
 							</article>
 						</div>
 					</div>
 					<!-- sidebar-widget -->
-					<div class="sidebar-widget">
+					<!-- <div class="sidebar-widget">
 						<h3 class="sidebar-title">Socials</h3>
 						<div class="widget-container">
 							<div class="widget-socials">
@@ -166,25 +117,17 @@
 								<a href="#"><i class="fa fa-reddit"></i></a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- sidebar-widget -->
-					<div class="sidebar-widget">
-						<h3 class="sidebar-title">Categories</h3>
+					<div class="sidebar-widget" id="category">
+						<h3 class="sidebar-title">博客分类</h3>
 						<div class="widget-container">
-							<ul>
-								<li><a href="#">Fashion</a></li>
-								<li><a href="#">Art</a></li>
-								<li><a href="#">Design</a></li>
-								<li><a href="#">Featured</a></li>
-								<li><a href="#">Graphics</a></li>
-								<li><a href="#">Peoples</a></li>
-								<li><a href="#">Uncategorized</a></li>
-							</ul>
+							<ul></ul>
 						</div>
-					</div>
 					</div>
 					</aside>
 				</div>
+				<!-- 右侧边栏 End -->
 			</div>
 		</section>
 		</div><!-- /.container -->
@@ -201,17 +144,90 @@
 			</div>
 
 			<div class="footer-bottom">
-				<i class="fa fa-copyright"></i> Copyright 2015. All rights reserved.<br>
-				More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+				<i class="fa fa-copyright"></i> 2017 老王的BAM工作室
 			</div>
 		</footer>
 
 		<!-- Bootstrap core JavaScript
 			================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/jquery.bxslider.js"></script>
-		<script src="js/mooz.scripts.min.js"></script>
+		<!-- <script src="js/jquery.bxslider.js"></script>
+		<script src="js/mooz.scripts.min.js"></script> -->
+
+		<script>
+			/********** 获取URL中参数值 Start **********/
+			function GetQueryString(name){
+			     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			     var r = window.location.search.substr(1).match(reg);
+			     if(r!=null) 
+			     	return unescape(r[2]); 
+			     else
+			     	return null;
+			} 
+			/********** 获取URL中参数值 End **********/
+		</script>
+		
+		<script>		
+		$(document).ready(function() {
+		   	var id = GetQueryString("id");
+		   	var tmp2 = $("#choice").children().first();
+		   	tmp2.hide();
+		   	var art = null;
+
+			/********** Choice Start **********/
+		   	//精选发布中item模板 和 blog的标题、日期等信息
+		   	$.getJSON("./blogs/list.json?_="+(new Date().getTime()), function(json){
+		   		//右侧博客分类
+		   		$.each(json.class,function(i,n){
+		   			$("#category")
+		   			.find("ul")
+		   			.append("<li><a href='./blogs.html?class="+i+"'>"+n+"</a></li>");
+		   		});	
+		   		//中间博客标题等 与 右侧精选发布
+		   		$.each(json.blogs,function(i,n){
+		   			//博客标题等
+		   			if(n.id==id){		   				
+			   			//设置图片
+			   			$(".blog-post-image").find("img").attr("src", "./blogs/mimg/"+n.mimg);
+			   			//设置URL
+			   			$(".blog-post-body").find("a").attr("href", n.href);
+			   			//设置标题
+			   			$(".blog-post-body").find("h2 > a").html(n.title);
+			   			//设置作者
+			   			$(".blog-post-body > .post-meta").find("a:first").html(n.author);
+			   			//设置发布时间
+			   			$(".blog-post-body > .post-meta").find("i:first").after(n.time);
+		   			}
+
+		   			//精选发布
+		   			if(n.featured=="1"){
+		   				art = $(tmp2).clone().appendTo("#choice").show();
+			   			//设置图片
+			   			$(art).children(".post-image").find("img").attr("src", "./blogs/simg/"+n.simg);
+			   			//设置URL
+			   			$(art).children(".post-body").find("a").attr("href", n.href);
+			   			//设置标题
+			   			$(art).children(".post-body").find("h2 > a").html(n.title);
+			   			//设置作者
+			   			$(art).find(".post-body > .post-meta").find("a:first").html(n.author);
+			   			//设置发布时间
+			   			$(art).find(".post-body > .post-meta").find("i:first").after(n.time);
+			   			//设置简介内容
+			   			$(art).children(".post-body").find("p").html(n.intro);
+		   			}
+		   		});	   		
+			});
+		    /********** Choice End **********/
+
+			/********** Blog Start **********/
+		    $.getJSON("./blogs/"+id+".json?_="+(new Date().getTime()), function(data){
+	   			//设置blog内容
+	   			$(".blog-post-body > .blog-post-text").html(data.article);
+		    });
+			/********** Blog End **********/
+		});
+		</script>
 	</body>
 </html>

@@ -11,7 +11,8 @@
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="favicon.ico">
+	    <link rel="icon" href="images/ico/fav.ico" mce_href="images/ico/fav.ico" type="image/x-icon">  
+	    <link rel="shortcut icon" href="images/ico/fav.ico" mce_href="images/ico/fav.ico" type="image/x-icon">
 		<title>Renda - clean blog theme based on Bootstrap</title>
 		<!-- Bootstrap core CSS -->
 		<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -61,12 +62,12 @@
 	        <nav id="main-menu" class="navbar navbar-default navbar-fixed-top" role="banner">
 	            <div class="container">
 	                <div class="navbar-header">
-	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	                    <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 	                        <span class="sr-only">Toggle navigation</span>
 	                        <span class="icon-bar"></span>
 	                        <span class="icon-bar"></span>
 	                        <span class="icon-bar"></span>
-	                    </button>
+	                    </button> -->
 	                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
 	                </div>
 					
@@ -143,7 +144,7 @@
 				<!-- 左侧列表 End -->
 
 
-				 <!-- 右侧边栏 Start -->
+				<!-- 右侧边栏 Start -->
 				<div class="col-md-4 sidebar-gutter">
 					<aside>
 					<!-- sidebar-widget -->
@@ -351,26 +352,28 @@
 		   		});	
 		   		//中间博客列表 与 右侧精选发布
 		   		$.each(json.blogs,function(i,n){
-		   			//博客列表
-		   			art = $(tmp).clone().appendTo("#list").show();
-		   			//设置图片
-		   			$(art).children(".blog-post-image").find("img").attr("src", n.imgsrc);
-		   			//设置URL
-		   			$(art).children(".blog-post-body").find("a").attr("href", n.href);
-		   			//设置标题
-		   			$(art).children(".blog-post-body").find("h2 > a").html(n.title);
-		   			//设置作者
-		   			$(art).find(".blog-post-body > .post-meta").find("a:first").html(n.author);
-		   			//设置发布时间
-		   			$(art).find(".blog-post-body > .post-meta").find("i:first").after(n.time);
-		   			//设置简介内容
-		   			$(art).children(".blog-post-body").find("p").html(n.intro);
+			   		//博客列表
+		   			if(n.class==cat || (cat==null || cat=="" || cat==undefined)){
+			   			art = $(tmp).clone().appendTo("#list").show();
+			   			//设置图片
+			   			$(art).children(".blog-post-image").find("img").attr("src", "./blogs/mimg/"+n.mimg);
+			   			//设置URL
+			   			$(art).children(".blog-post-body").find("a").attr("href", n.href);
+			   			//设置标题
+			   			$(art).children(".blog-post-body").find("h2 > a").html(n.title);
+			   			//设置作者
+			   			$(art).find(".blog-post-body > .post-meta").find("a:first").html(n.author);
+			   			//设置发布时间
+			   			$(art).find(".blog-post-body > .post-meta").find("i:first").after(n.time);
+			   			//设置简介内容
+			   			$(art).children(".blog-post-body").find("p").html(n.intro);
+		   			}
 
 		   			//精选发布
 		   			if(n.featured=="1"){
 		   				art = $(tmp2).clone().appendTo("#choice").show();
 			   			//设置图片
-			   			$(art).children(".post-image").find("img").attr("src", n.imgsrc);
+			   			$(art).children(".post-image").find("img").attr("src", "./blogs/simg/"+n.simg);
 			   			//设置URL
 			   			$(art).children(".post-body").find("a").attr("href", n.href);
 			   			//设置标题
@@ -384,21 +387,6 @@
 		   			}
 		   		});	   		
 			});
-
-			// $.ajax({  
-   //      		//请求方式为get  
-		 //        type:"POST",  
-		 //        //json文件位置  
-		 //        url:"https://jbo2014.github.io/blogs/list.json",  
-		 //        cache: false,
-		 //        //返回数据格式为json  
-		 //        dataType: "json",  
-		 //        //请求成功完成后要执行的方法  
-		 //        success: function(data){  
-		 //            //使用$.each方法遍历返回的数据date,插入到id为#result中  
-		 //            alart(data); 
-		 //        }  
-		 //    })  
 		    /********** List End **********/
 
 		});

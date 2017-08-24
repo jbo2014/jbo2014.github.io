@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 [Color codes]
 Buttons, etc:	#726FB9 (blue)
-hover color:	#fed136 (yellow)
+hover color:	#45aed6 (sky blue)
 -------------------------------------------------------------------*/
 /* main font for menu. */
 /*@import url(http://fonts.googleapis.com/css?family=Lora:400|Raleway:100,200,300,400,500,700,800);*/
@@ -45,7 +45,7 @@ a, a:hover, a:focus, a:active, a.active {
 }
 ::selection {
 	text-shadow: none;
-	background: #fed136;
+	background: #45aed6;
 }
 section {
 	padding-bottom: 60px;
@@ -190,7 +190,7 @@ header {
 	color: #B1B1B1;
 }
 .blog-post .post-meta a:hover {
-	color: #fed136;
+	color: #45aed6;
 }
 .blog-post .post-meta span {
 	padding-left: 15px;
@@ -223,8 +223,8 @@ header {
 	transition: all 0.2s ease-out;
 }
 .blog-post .read-more a:hover {
-	background-color: #fed136;
-	border-color: #fed136;
+	background-color: #45aed6;
+	border-color: #45aed6;
 	color: #fff;
 }
 .blog-post .blog-post-text {
