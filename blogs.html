@@ -393,13 +393,13 @@
 
 		    /********** List Start **********/
 		   	var cat = GetQueryString("class");
-		 //   	$.getJSON("./blogs/list.json", {"t": new Date().getTime()}, function(json){
-		 //   		$.each(json.class,function(i,n){
-		 //   			$("#category")
-		 //   			.find("ul");
-		 //   			//.append("<li><a href='/blogs?class='"++">"++"</a></li>");
-		 //   		});		   		
-			// });
+		   	$.getJSON("./blogs/list.json", {"t": new Date().getTime()}, function(json){
+		   		$.each(json.class,function(i,n){
+		   			$("#category")
+		   			.find("ul");
+		   			//.append("<li><a href='/blogs?class='"++">"++"</a></li>");
+		   		});		   		
+			});
 			$.ajax({  
         		//请求方式为get  
 		        type:"POST",  
