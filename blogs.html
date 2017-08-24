@@ -163,17 +163,17 @@
 					<aside>
 					<!-- sidebar-widget -->
 					<div class="sidebar-widget">
-						<h3 class="sidebar-title">About Me</h3>
+						<h3 class="sidebar-title">我</h3>
 						<div class="widget-container widget-about">
 							<a href="post.html"><img src="images/blog/author.jpg" alt=""></a>
-							<h4>Jamie Mooz</h4>
-							<div class="author-title">Designer</div>
-							<p>While everyone’s eyes are glued to the runway, it’s hard to ignore that there are major fashion moments on the front row too.</p>
+							<h4>老王</h4>
+							<!-- <div class="author-title">Designer</div> -->
+							<p>嘿，我是老王，一个码工，编龄6、7年，项目十来个。虽已步入不惑之年，然环顾四周，家徒四壁。为补家用，特成立此室，以盈客八方，结友朋五湖。</p>
 						</div>
 					</div>
 					<!-- sidebar-widget -->
 					<div class="sidebar-widget">
-						<h3 class="sidebar-title">Featured Posts</h3>
+						<h3 class="sidebar-title">精选发布</h3>
 						<div class="widget-container">
 							<article class="widget-post">
 								<div class="post-image">
@@ -233,7 +233,7 @@
 						</div>
 					</div>
 					<!-- sidebar-widget -->
-					<div class="sidebar-widget">
+					<!-- <div class="sidebar-widget">
 						<h3 class="sidebar-title">Socials</h3>
 						<div class="widget-container">
 							<div class="widget-socials">
@@ -245,19 +245,19 @@
 								<a href="#"><i class="fa fa-reddit"></i></a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- sidebar-widget -->
-					<div class="sidebar-widget">
-						<h3 class="sidebar-title">Categories</h3>
+					<div class="sidebar-widget" id="category">
+						<h3 class="sidebar-title">博客分类</h3>
 						<div class="widget-container">
 							<ul>
-								<li><a href="#">Fashion</a></li>
-								<li><a href="#">Art</a></li>
-								<li><a href="#">Design</a></li>
-								<li><a href="#">Featured</a></li>
-								<li><a href="#">Graphics</a></li>
-								<li><a href="#">Peoples</a></li>
-								<li><a href="#">Uncategorized</a></li>
+								<li><a href="">工作室</a></li>
+								<li><a href="#">项目</a></li>
+								<li><a href="#">行业</a></li>
+								<li><a href="#">编码</a></li>
+								<li><a href="#">设计</a></li>
+								<li><a href="#">杂谈</a></li>
+								<li><a href="#">未分类</a></li>
 							</ul>
 						</div>
 					</div>
@@ -291,9 +291,24 @@
     	<script src="js/owl.carousel.min.js"></script>
 		<!-- <script src="js/jquery.bxslider.js"></script>
 		<script src="js/mooz.scripts.min.js"></script> -->
+
 		<script>
-		//Slider
+			/********** 获取URL中参数值 Start **********/
+			function GetQueryString(name){
+			     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			     var r = window.location.search.substr(1).match(reg);
+			     if(r!=null) 
+			     	return unescape(r[2]); 
+			     else
+			     	return null;
+			} 
+			/********** 获取URL中参数值 End **********/
+		</script>
+
+		<script>		
 		$(document).ready(function() {
+
+			/********** Slider Start **********/
 			var time = 7; // time in seconds
 
 		 	var $progressBar,
@@ -319,8 +334,8 @@
 		      //autoHeight : true,
 		      transitionStyle : "fadeUp"
 		    });
-		 
-		    //Init progressBar where elem is $("#owl-demo")
+
+			//Init progressBar where elem is $("#owl-demo")
 		    function progressBar(elem){
 		      $elem = elem;
 		      //build progress bar elements
@@ -374,6 +389,33 @@
 		      //start again
 		      start();
 		    }
+		    /********** Slider End **********/
+
+		    /********** List Start **********/
+		   	var cat = GetQueryString("class");
+		 //   	$.getJSON("./blogs/list.json", {"t": new Date().getTime()}, function(json){
+		 //   		$.each(json.class,function(i,n){
+		 //   			$("#category")
+		 //   			.find("ul");
+		 //   			//.append("<li><a href='/blogs?class='"++">"++"</a></li>");
+		 //   		});		   		
+			// });
+			$.ajax({  
+        		//请求方式为get  
+		        type:"POST",  
+		        //json文件位置  
+		        url:"./blogs/list.json",  
+		        cache: false,
+		        //返回数据格式为json  
+		        dataType: "json",  
+		        //请求成功完成后要执行的方法  
+		        success: function(data){  
+		            //使用$.each方法遍历返回的数据date,插入到id为#result中  
+		            alart(data); 
+		        }  
+		    })  
+		    /********** List End **********/
+
 		});
 		</script>
 	</body>
